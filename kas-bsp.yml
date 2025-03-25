@@ -3,6 +3,8 @@ header:
 
 machine:  iot2000
 
+target: core-image-minimal-iot2000
+
 repos:
   meta-iot2000:
     layers:

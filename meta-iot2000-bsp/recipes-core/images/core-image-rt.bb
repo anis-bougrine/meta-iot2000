@@ -1,5 +1,4 @@
-require recipes-core/images/core-image-minimal.bb
-require core-image-iot2000.inc
+require recipes-core/images/core-image-minimal-iot2000.bb
 
 # Skip processing of this recipe if linux-cip-rt is not explicitly specified as the
 # PREFERRED_PROVIDER for virtual/kernel. This avoids errors when trying
