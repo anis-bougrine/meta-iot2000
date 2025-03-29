@@ -87,49 +87,17 @@ $ kas build meta-iot2000/kas-sdk-linux-x64.yml
 ```
 
 
-Docker Build
+Docker-compose
 ------------
 
-Make sure Docker is installed and properly configured for your host system. You
-may have to switch the storage driver away from legacy aufs, see
-[Docker documentation](https://docs.docker.com/engine/userguide/storagedriver/selectadriver),
-if kas warns about this.
-
-Again, the first step is cloning of the repository (or unpacking an archive):
+This requires docker installation.
+This is helpful for Mac and Windows users who can't run Yocto directly on the host. It's also helpful for environment isolation purposes between host and Yocto.
+Run the following commands to access Linux environment where you can directly launch project build with kas commands:
 
 ```shell
-$ git clone https://github.com/siemens/meta-iot2000
+$ docker-compose up -d
+$ docker-compose exec kas /bin/bash
 ```
-
-Next, install the `kas-container` script like this:
-
-```shell
-$ wget https://raw.githubusercontent.com/siemens/kas/2.6.2/kas-container
-$ chmod a+x kas-container
-```
-
-Now you can generate a desired image. The following assumes that your user has
-permission to use docker. Usually, this is achieved by adding the user to the
-docker group (which has security implications). Note that running the build as
-root does not work.
-
-```shell
-$ ./kas-container build meta-iot2000/kas-example.yml
-```
-
-The above command disposes the build container after use, keeping downloads and
-build results in the current work directory.
-
-You may want to use the container interactively:
-
-```shell
-$ ./kas-container shell meta-iot2000/kas-example.yml
-```
-
-If you are building from within a proxy-restricted network, make sure the
-settings are available via the standard environment variables
-(`http_proxy` etc.).
-
 
 Booting the Image from SD card
 ==============================
