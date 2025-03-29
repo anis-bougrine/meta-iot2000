@@ -1,0 +1,11 @@
+# This docker-compose file provides all project build dependencies thanks to kasproject/kas docker image
+# This is useful for mac and windows users or for Yocto environment isolation.
+services:
+  kas:
+    image: kasproject/kas:latest
+    volumes:
+      - ./:/mnt
+    working_dir: /mnt
+    stdin_open: true
+    tty: true
+    command: /bin/bash
