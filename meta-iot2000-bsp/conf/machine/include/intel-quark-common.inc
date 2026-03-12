@@ -3,8 +3,8 @@
 #
 
 DEFAULTTUNE ?= "i586-nlp-32"
-require conf/machine/include/tune-i586-nlp.inc
-require conf/machine/include/x86-base.inc
+require conf/machine/include/x86/tune-i586-nlp.inc
+require conf/machine/include/x86/x86-base.inc
 
 # gnutls padlock code uses CMOV instruction in assembly which
 # is not valid for Quark.
