@@ -35,6 +35,9 @@ bblayers_conf_header:
     BBFILES ?= ""
 
 local_conf_header:
+  proxy: |
+    CONNECTIVITY_CHECK_URIS = ""
+
   standard: |
     CONF_VERSION = "2"
 
