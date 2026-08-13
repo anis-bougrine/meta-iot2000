@@ -2,6 +2,10 @@ IOT2000 Board Support Package
 =============================
 
 > [!IMPORTANT]
+> This is a fork from the Siemens GitHub organization. The goal is to continue maintaining it for people who still use
+> this machine, such as my clients and me, after Siemens gave up the project. See the Siemens announcement below.
+
+> [!IMPORTANT]
 > Product cancellation for Siemens SIMATIC IOT2040 has been declared on [January 1, 2023](https://support.industry.siemens.com/cs/de/en/view/109816013), this means:
 > 
 > - IOT2040 is no longer available for new orders.
