@@ -18,7 +18,7 @@ repos:
 
   meta-efibootguard:
     url: https://github.com/siemens/meta-efibootguard
-    refspec: e13f038bb362a6c086be50359f1bf31cf770e151
+    refspec: 9917279c26994c0f21a8ebcd61e7dcacc6d9c207
 
   meta-openembedded:
     url: https://git.openembedded.org/meta-openembedded
