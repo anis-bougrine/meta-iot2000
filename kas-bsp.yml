@@ -1,5 +1,5 @@
 header:
-  version: 2
+  version: 23
 
 machine:  iot2000
 
@@ -8,21 +8,31 @@ repos:
     layers:
       meta-iot2000-bsp:
 
-  poky:
-    url: https://git.yoctoproject.org/git/poky
-    refspec: 077627338ac18aeca34bfe0c52777fab38e2e0c0
+  bitbake:
+    url: https://git.openembedded.org/bitbake/
+    commit: acfe02fa38b5da9e6a36c6cedcf91d4fcbefbfbd
+    layers: {}
+
+  openembedded-core:
+    url: https://git.openembedded.org/openembedded-core/
+    commit: 5d1aa5c806c061a2994f4decb59016610f093213
     layers:
       meta:
+
+  meta-yocto:
+    url: https://git.yoctoproject.org/meta-yocto
+    commit: 24c24cef5d1523fefe43a3e3d34667b37ae551f3
+    layers:
       meta-poky:
       meta-yocto-bsp:
 
   meta-efibootguard:
     url: https://github.com/siemens/meta-efibootguard
-    refspec: 9917279c26994c0f21a8ebcd61e7dcacc6d9c207
+    commit: 228d33a30947232bd00e15c0fb6b5c209ef186f9
 
   meta-openembedded:
     url: https://git.openembedded.org/meta-openembedded
-    refspec: ef3df29f2cfca6a9513b51ebcdccf82b6c8a836f
+    branch: wrynose
     layers:
       meta-oe:
 
