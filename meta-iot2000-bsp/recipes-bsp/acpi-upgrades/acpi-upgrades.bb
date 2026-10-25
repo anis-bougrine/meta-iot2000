@@ -8,6 +8,7 @@ inherit deploy
 DEPENDS = "acpica-native"
 
 SRC_URI:iot2000 = "file://iot2000"
+S = "${UNPACKDIR}/iot2000"
 
 do_compile() {
 	rm -fr ${WORKDIR}/acpi-upgrades
