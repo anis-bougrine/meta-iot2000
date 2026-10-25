@@ -8,14 +8,14 @@ inherit deploy
 DEPENDS = "acpica-native"
 
 SRC_URI:iot2000 = "file://iot2000"
-S = "${UNPACKDIR}/iot2000"
+S = "${WORKDIR}/iot2000"
 
 do_compile() {
 	rm -fr ${WORKDIR}/acpi-upgrades
 
 	install -d ${WORKDIR}/acpi-upgrades/kernel/firmware/acpi
 
-	for table in ${UNPACKDIR}/iot2000/*.asl; do
+	for table in ${WORKDIR}/iot2000/*.asl; do
 		dest_table=$(basename $table)
 		${STAGING_DIR_NATIVE}${bindir_native}/iasl \
 			-p ${WORKDIR}/acpi-upgrades/kernel/firmware/acpi/$dest_table $table
