@@ -1,7 +1,7 @@
 #This recipe modifies the default settings of busybox
 #arp.cfg adds the "arp" command
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 SRC_URI += "file://arp.cfg"
 SRC_URI += "file://lsusb.cfg"
@@ -22,7 +22,7 @@ CONFFILES_${PN}-ntpd = "${sysconfdir}/ntp.conf"
 
 RRECOMMENDS_${PN} += "${PN}-ntpd"
 
-do_install_append() {
+do_install:append() {
 	install -d ${D}${sysconfdir}
 	install -m 0644 ${WORKDIR}/ntp.conf ${D}${sysconfdir}/
 

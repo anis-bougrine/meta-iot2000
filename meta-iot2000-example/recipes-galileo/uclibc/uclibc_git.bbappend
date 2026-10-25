@@ -7,12 +7,12 @@
 # This file is subject to the terms and conditions of the MIT License.  See
 # COPYING.MIT file in the top-level directory.
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 # I got the libstdc++.so.* and libgcc_s.so.* by compiling them
 # with TCLIB="uclibc" and extracted the libstdc++6*.ipk and libgcc1*.ipk with
 # "ar x *.ipk" and then data.tar.gz with "tar xf ..."
-SRC_URI_append = " \
+SRC_URI:append = " \
     file://0001-dl-elf.c-never-look-in-shared-library-loader-for-lib.patch \
     file://0002-Very-hacky-solution-for-arduino-eeprom-compatibility.patch \
     file://config.cfg \
@@ -58,7 +58,7 @@ python (){
         d.setVar(varname, var)
 }
 
-do_install_append() {
+do_install:append() {
     ln -s libm.so.1 "${D}${INSTDIR}/lib/libm.so.0"
     ln -s libc.so.1 "${D}${INSTDIR}/lib/libc.so.0"
     ln -s libpthread.so.1 "${D}${INSTDIR}/lib/libpthread.so.0"
@@ -75,7 +75,7 @@ PRIVATE_LIBS_${PN}-libutil = "libutil.so.1"
 FILES_${PN}-binlibs = "${INSTDIR}/lib/libgcc_s.so* ${INSTDIR}/usr/lib/libstdc++.so*"
 PRIVATE_LIBS_${PN}-binlibs = "libstdc++.so.6.0.21 libstdc++.so.6 libgcc_s.so.1"
 
-PACKAGES_append = " ${PN}-binlibs"
+PACKAGES:append = " ${PN}-binlibs"
 
 INSANE_SKIP_${PN} += "already-stripped"
 INSANE_SKIP_${PN}-binlibs += "build-deps"
