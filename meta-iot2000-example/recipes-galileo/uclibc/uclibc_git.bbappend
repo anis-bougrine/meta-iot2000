@@ -26,7 +26,7 @@ PROVIDES = ""
 
 INSTDIR = "/opt/uclibc"
 
-base_prefix="${INSTDIR}"
+base_prefix = "${INSTDIR}"
 
 python (){
     configmangle = d.getVar('configmangle', True)
@@ -82,4 +82,4 @@ PACKAGES:append = " ${PN}-binlibs"
 INSANE_SKIP:${PN} += "already-stripped"
 INSANE_SKIP:${PN}-binlibs += "build-deps"
 
-export V="1"
+export V = "1"
