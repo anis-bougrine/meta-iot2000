@@ -10,7 +10,7 @@ inherit npm-ng
 
 SRC_URI += "file://node-red.init"
 
-do_install_append() {
+do_install:append() {
     install -d ${D}${sysconfdir}/init.d
     install -m 0755 ${WORKDIR}/node-red.init ${D}${sysconfdir}/init.d/node-red
 }

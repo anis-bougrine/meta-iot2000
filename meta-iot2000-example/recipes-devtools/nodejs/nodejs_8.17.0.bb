@@ -37,7 +37,7 @@ ARCHFLAGS_arm = "${@bb.utils.contains('TUNE_FEATURES', 'callconvention-hard', '-
                     bb.utils.contains('TUNE_FEATURES', 'vfpv3d16', '--with-arm-fpu=vfpv3-d16', \
                     bb.utils.contains('TUNE_FEATURES', 'vfpv3', '--with-arm-fpu=vfpv3', \
                     '--with-arm-fpu=vfp', d), d), d)}"
-GYP_DEFINES_append_mipsel = " mips_arch_variant='r1' "
+GYP_DEFINES:mipsel:append = " mips_arch_variant='r1' "
 ARCHFLAGS ?= ""
 
 # Node is way too cool to use proper autotools, so we install two wrappers to forcefully inject proper arch cflags to workaround gypi
@@ -61,7 +61,7 @@ do_install () {
     oe_runmake install DESTDIR=${D}
 }
 
-do_install_append_class-native() {
+do_install:append:class-native() {
     # use node from PATH instead of absolute path to sysroot
     # node-v0.10.25/tools/install.py is using:
     # shebang = os.path.join(node_prefix, 'bin/node')
@@ -76,7 +76,7 @@ do_install_append_class-native() {
     sed "1s^.*^#\!/usr/bin/env node^g" -i ${D}${exec_prefix}/lib/node_modules/npm/bin/npm-cli.js
 }
 
-do_install_append_class-target() {
+do_install:append:class-target() {
     sed "1s^.*^#\!${bindir}/env node^g" -i ${D}${exec_prefix}/lib/node_modules/npm/bin/npm-cli.js
 }
 
