@@ -4,16 +4,16 @@ LIC_FILES_CHKSUM = "file://${IOT2000_MIT_LICENSE};md5=838c366f69b72c5df05c96dff7
 
 SRC_URI = "file://switchmode.c"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 INSTDIR = "/usr/bin/"
 
-FILES_${PN} = "${INSTDIR}*"
+FILES:${PN} = "${INSTDIR}*"
 
 do_compile() {
-	${CC} ${CFLAGS} ${LDFLAGS} ${WORKDIR}/switchmode.c -o switchserialmode
+	${CC} ${CFLAGS} ${LDFLAGS} ${UNPACKDIR}/switchmode.c -o ${B}/switchserialmode
 }
 
 do_install() {
 	install -d ${D}${INSTDIR}
-	install -m 755 ${WORKDIR}/switchserialmode ${D}${INSTDIR}
+	install -m 755 ${B}/switchserialmode ${D}${INSTDIR}
 }

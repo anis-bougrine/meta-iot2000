@@ -14,13 +14,13 @@ SRC_URI += "file://no-ext-dhcp.cfg"
 PACKAGES =+ "${PN}-ntpd"
 
 INITSCRIPT_PACKAGES += "${PN}-ntpd"
-INITSCRIPT_NAME_${PN}-ntpd = "ntpd.busybox"
+INITSCRIPT_NAME:${PN}-ntpd = "ntpd.busybox"
 
-FILES_${PN}-ntpd = "${sysconfdir}/init.d/ntpd.busybox ${sysconfdir}/ntp.conf"
+FILES:${PN}-ntpd = "${sysconfdir}/init.d/ntpd.busybox ${sysconfdir}/ntp.conf"
 
-CONFFILES_${PN}-ntpd = "${sysconfdir}/ntp.conf"
+CONFFILES:${PN}-ntpd = "${sysconfdir}/ntp.conf"
 
-RRECOMMENDS_${PN} += "${PN}-ntpd"
+RRECOMMENDS:${PN} += "${PN}-ntpd"
 
 do_install:append() {
 	install -d ${D}${sysconfdir}

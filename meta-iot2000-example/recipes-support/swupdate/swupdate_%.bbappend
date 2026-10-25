@@ -6,7 +6,7 @@ SRC_URI += " \
     file://progress_firmware.c \
     file://swupdate.cfg"
 
-FILES_${PN} += "/etc/swupdate.cfg /usr/bin/progress_firmware"
+FILES:${PN} += "/etc/swupdate.cfg /usr/bin/progress_firmware"
 
 DEPENDS += "efibootguard"
 
@@ -19,7 +19,7 @@ do_configure:prepend () {
 
 # bitbake complains because progress_firmware is already stripped which would prevent
 # debugging. To prevent this QA error:
-INSANE_SKIP_${PN}:append = " already-stripped"
+INSANE_SKIP:${PN}:append = " already-stripped"
 
 do_install:append() {
     install -d ${D}${sysconfdir}
