@@ -8,7 +8,7 @@ task: populate_sdk
 repos:
   meta-mingw:
     url: https://git.yoctoproject.org/git/meta-mingw
-    refspec: 524de686205b5d6736661d4532f5f98fee8589b7
+    refspec: a2065f321a3dbca1e69f070502917c76653d9105
 
 local_conf_header:
   sdk_machine: |
