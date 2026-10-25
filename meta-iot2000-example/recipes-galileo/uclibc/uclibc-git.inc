@@ -4,7 +4,7 @@ PV = "1.0.12+git${SRCPV}"
 
 FILESEXTRAPATHS =. "${FILE_DIRNAME}/uclibc-git:"
 
-SRC_URI = "git://uclibc-ng.org/git/uclibc-ng \
+SRC_URI = "git://uclibc-ng.org/git/uclibc-ng;nobranch=1 \
         file://0001-Disable-lrount_tes-function.patch \
         file://uClibc.machine \
         file://uClibc.distro \
