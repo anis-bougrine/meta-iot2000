@@ -14,7 +14,7 @@ do_compile() {
 
 	install -d ${WORKDIR}/acpi-upgrades/kernel/firmware/acpi
 
-	for table in ${WORKDIR}/*/*.asl; do
+	for table in ${UNPACKDIR}/*/*.asl; do
 		dest_table=$(basename $table)
 		${STAGING_DIR_NATIVE}${bindir_native}/iasl \
 			-p ${WORKDIR}/acpi-upgrades/kernel/firmware/acpi/$dest_table $table
