@@ -4,4 +4,4 @@ do_install:append() {
     mv ${D}${libdir}/node_modules ${D}${libdir}/node
 }
 
-FILES_node-${PN} = "${prefix}/lib/node/"
+FILES:node-${PN} = "${prefix}/lib/node/"

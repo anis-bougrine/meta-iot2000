@@ -11,4 +11,4 @@ DEPENDS = "virtual/${TARGET_PREFIX}binutils \
            linux-libc-headers ncurses-native \
            kern-tools-native"
 
-RDEPENDS_${PN}-dev = "linux-libc-headers-dev"
+RDEPENDS:${PN}-dev = "linux-libc-headers-dev"

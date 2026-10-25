@@ -3,7 +3,7 @@ SUMMARY = "A Node-RED node to talk to an Intel Galileo or Edison using mraa"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://hardware/intel/LICENSE;md5=2c0cb74248cfa16e787ab1cf4c16e94e"
 
-SRC_URI = "git://github.com/node-red/node-red-nodes;protocol=https \
+SRC_URI = "git://github.com/node-red/node-red-nodes;protocol=https;branch=master \
     file://0001-intel-gpio-HTML-cleanups.patch \
     file://0002-intel-gpio-Consistently-use-this-where-available.patch \
     file://0003-intel-gpio-Add-support-for-initial-message-from-digi.patch \
@@ -17,7 +17,7 @@ SRC_URI = "git://github.com/node-red/node-red-nodes;protocol=https \
     file://0011-intel-gpio-Privatize-version.patch"
 SRCREV = "8d45e85acfa10b53fb94b1d6bfc16b9f8cc39eea"
 
-RDEPENDS_${PN} += "node-red"
+RDEPENDS:${PN} += "node-red"
 
 S = "${WORKDIR}/git"
 
@@ -28,4 +28,4 @@ do_install() {
     install -m 0644 ${S}/hardware/intel/* ${D}${NODE_MODULES_DIR}/${PN}
 }
 
-FILES_${PN} = "${NODE_MODULES_DIR}/${PN}"
+FILES:${PN} = "${NODE_MODULES_DIR}/${PN}"

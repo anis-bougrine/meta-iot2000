@@ -9,7 +9,7 @@ SRC_URI = "file://Makefile \
            file://COPYING \
           "
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 do_install:append() {
 	install -d ${D}${sysconfdir}/modules-load.d

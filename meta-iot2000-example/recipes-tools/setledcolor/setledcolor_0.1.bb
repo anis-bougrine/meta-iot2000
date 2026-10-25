@@ -4,13 +4,13 @@ LIC_FILES_CHKSUM = "file://${IOT2000_MIT_LICENSE};md5=838c366f69b72c5df05c96dff7
 
 SRC_URI = "file://setledcolor.py"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
-FILES_${PN} += "${bindir}/setledcolor.py"
+FILES:${PN} += "${bindir}/setledcolor.py"
 
-RDEPENDS_${PN} = "python3-mraa"
+RDEPENDS:${PN} = "python3-mraa"
 
 do_install() {
 	install -d ${D}${bindir}
-	install -m 755 ${WORKDIR}/setledcolor.py ${D}${bindir}/
+	install -m 755 ${UNPACKDIR}/setledcolor.py ${D}${bindir}/
 }
